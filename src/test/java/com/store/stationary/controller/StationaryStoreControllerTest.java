@@ -37,7 +37,7 @@ public class StationaryStoreControllerTest extends IntegrationTest {
                 .andExpect(status().isOk())
                 .andDo(document("stationary-store-find-one",
                         pathParameters(
-                                parameterWithName("id").description("The product isbn to retrieve.")
+                                parameterWithName("id").description("The product id to retrieve.")
                         ),
                         responseFields(
                                 fieldWithPath(".id").description("The product id."),
@@ -141,7 +141,7 @@ public class StationaryStoreControllerTest extends IntegrationTest {
                 .andExpect(status().isNoContent())
                 .andDo(document("product-delete",
                         pathParameters(
-                                parameterWithName("id").description("The product isbn to update.")
+                                parameterWithName("id").description("The product id to update.")
                         ))
                 );
 

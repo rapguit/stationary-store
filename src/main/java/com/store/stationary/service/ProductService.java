@@ -17,15 +17,15 @@ public class ProductService {
         return repo.findAll();
     }
 
-    public Optional<Product> findOne(String isbn) {
-        return repo.findById(isbn);
+    public Optional<Product> findOne(String id) {
+        return repo.findById(id);
     }
 
     public Product save(Product product) {
         return repo.save(product);
     }
 
-    public void delete(String isbn) {
-        repo.deleteById(isbn);
+    public void delete(String id) {
+        repo.deleteById(id);
     }
 }
