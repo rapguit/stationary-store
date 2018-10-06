@@ -12,7 +12,7 @@ How to start the Stationary Store application
 How to start the Stationary Store application [Docker]
 ---
 
-1. Run `docker built -t stationary-store .` at project root level
+1. Run `docker build -t stationary-store .` at project root level
 1. Start container with `docker run -p 8080:8080 stationary-store`
 1. To check that your application is running enter url `http://localhost:8080/stationary-store`
 
