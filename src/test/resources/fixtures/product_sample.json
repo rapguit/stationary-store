@@ -1,0 +1,7 @@
+{
+    "barCode":"978-1617291999",
+    "name":"Java 8 in Action",
+    "category":"BOOK",
+    "quantity":424,
+    "description":"Java 8 in Action is a clearly written guide to the new features of Java 8. The book covers lambdas, streams, and functional-style programming. With Java 8's functional features you can now write more concise code in less time, and also automatically benefit from multicore architectures. It's time to dig in!"
+}
