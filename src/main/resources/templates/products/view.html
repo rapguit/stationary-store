@@ -1,0 +1,60 @@
+<form name="disciplineForm" class="form-horizontal">
+    <div class="container-fluid">
+        <div class="container-fluid" >    
+            <h1 class="pull-right">Product</h1>
+        </div>
+        <br/>
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>ID</strong>
+                    <div class="col-sm-offset-1">
+                        {{products.productView.id}}
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <strong>Bar Code</strong>
+                    <div class="col-sm-offset-1">
+                        {{products.productView.barCode}}
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <strong>Name</strong>
+                    <div class="col-sm-offset-1">
+                        {{products.productView.name}}
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <strong>Description</strong>
+                    <div class="col-sm-offset-1">
+                        {{products.productView.description}}
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <strong>Category</strong>
+                    <div class="col-sm-offset-1">
+                        {{products.productView.category}}
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <strong>Quantity</strong>
+                    <div class="col-sm-offset-1">
+                        {{products.productView.quantity}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="col-sm-offset-2 col-sm-offset-1">
+                <div class="btn-toolbar pull-right">
+                    <button class="btn btn-default" 
+                            title="Back"
+                            aria-strong="Back"
+                            ng-click="products.back()">
+                        <span class="glyphicon glyphicon-arrow-left"></span> Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

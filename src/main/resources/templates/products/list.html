@@ -1,0 +1,92 @@
+<form class="form-horizontal">
+    <div class="container-fluid" >
+        <h1 class="pull-right">Products</h1>
+    </div>
+    <div class="container-fluid" >
+        <div class="col-sm-4">
+            <div class="input-group">
+                <input type="text" ng-model="criteria" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" placeholder="Filter...">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-filter"></span>
+                </span>
+            </div>
+        </div>
+        <br/><br/>
+        <button class="btn btn-default pull-right"
+                title="New Product"
+                aria-label="New Product"
+                ng-click="products.new()">
+            New Product<span class="glyphicon glyphicon-plus"></span>
+        </button>
+
+        <table class="table table-hover table-responsive">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="b in productList| filter: criteria | orderBy: name" ng-show="productList.length != 0">
+                <td>{{b.id}}</td>
+                <td>{{b.name}}</td>
+                <td>{{b.quantity}}</td>
+                <td>
+                    <div class="col-sm-8 pull-right">
+                        <div class="btn-group" role="group" aria-label="Actions">
+                            <button class="btn btn-default"
+                                    title="Edit"
+                                    aria-label="Edit"
+                                    ng-click="products.edit(b.id)">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button class="btn btn-default"
+                                    title="View"
+                                    aria-label="View"
+                                    ng-click="products.view(b.id)">
+                                <i class="material-icons">view</i>
+                            </button>
+                            <button class="btn btn-danger"
+                                    title="Delete"
+                                    aria-label="Delete"
+                                    data-toggle="modal"
+                                    data-target="#deleteModal"
+                                    ng-click="products.select(b)">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div ng-show="productList.length == 0">
+            <div class="alert alert-info" role="alert">
+                <strong>Ops!</strong> No products at all.
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade in" id="deleteModal" tabindex="-1" aria-hidden="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h3 class="modal-title" id="myModalLabel">Warn</h3>
+                </div>
+                <div class="modal-body">
+                    Do you want to permanently delete the product {{products.selected.name}} ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="products.delete()" >Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -- -->
+
+</form>
